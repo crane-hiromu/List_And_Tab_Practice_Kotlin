@@ -3,6 +3,7 @@ package com.example.list_and_tab_practice_kotlin
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.example.list_and_tab_practice_kotlin.List.MainListFragment
 
 class MainPageAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
 
@@ -20,24 +21,20 @@ class MainPageAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
     }
 
     override fun getItem(position: Int): Fragment? {
-//        when (position) {
-//            0 -> {
-//                return MainPageListFragment()
-//            }
-//            1 -> {
-//                return MainPageListFragment()
-//            }
-//            2 -> {
-//                return MainPageListFragment()
-//            }
-//            3 -> {
-//                return MainPageListFragment()
-//            }
-//            else -> return null
-//        }
-
-        return Fragment()
-
-        return null
+        when (position) {
+            0 -> {
+                return MainListFragment()
+            }
+            1 -> {
+                return Fragment()
+            }
+            2 -> {
+                return Fragment()
+            }
+            3 -> {
+                return Fragment()
+            }
+            else -> return null
+        }
     }
 }

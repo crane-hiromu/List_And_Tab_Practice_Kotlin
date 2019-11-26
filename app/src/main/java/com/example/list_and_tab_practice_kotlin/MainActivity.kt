@@ -7,18 +7,19 @@ import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
 
-    var tabLayout: TabLayout? = null
-    var viewPager: ViewPager? = null
+    private lateinit var tabLayout: TabLayout
+    private lateinit var viewPager: ViewPager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        tabLayout = findViewById(R.id.main_tab_layout)
-        viewPager = findViewById(R.id.main_view_page)
-
         val adapter = MainPageAdapter(supportFragmentManager)
-        viewPager?.adapter = adapter
-        viewPager?.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
+        viewPager = findViewById(R.id.main_view_page)
+        viewPager.adapter = adapter
+//        viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
+
+        tabLayout = findViewById(R.id.main_tab_layout)
+        tabLayout.setupWithViewPager(viewPager)
     }
 }
