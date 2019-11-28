@@ -3,7 +3,8 @@ package com.example.list_and_tab_practice_kotlin
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.example.list_and_tab_practice_kotlin.List.MainListFragment
+import com.example.list_and_tab_practice_kotlin.list.holder.MainListHolderFragment
+import com.example.list_and_tab_practice_kotlin.list.list.MainListFragment
 
 class MainPageAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
 
@@ -26,7 +27,7 @@ class MainPageAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
                 return MainListFragment()
             }
             1 -> {
-                return Fragment()
+                return MainListHolderFragment()
             }
             2 -> {
                 return Fragment()

@@ -1,4 +1,4 @@
-package com.example.list_and_tab_practice_kotlin.List
+package com.example.list_and_tab_practice_kotlin.list.list
 
 import android.content.Context
 import android.view.LayoutInflater

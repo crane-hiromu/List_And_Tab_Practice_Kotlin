@@ -1,4 +1,4 @@
-package com.example.list_and_tab_practice_kotlin.List
+package com.example.list_and_tab_practice_kotlin.list.holder
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,14 +7,15 @@ import android.view.ViewGroup
 import android.widget.ListView
 import androidx.fragment.app.Fragment
 import com.example.list_and_tab_practice_kotlin.R
+import com.example.list_and_tab_practice_kotlin.list.list.MainListAdapter
 
-class MainListFragment : Fragment() {
+class MainListHolderFragment : Fragment() {
 
     // MARK: Properties
 
     private val data: List<String> = arrayListOf("hoge", "huga", "fizz", "buzz")
     private lateinit var listView: ListView
-    private lateinit var listAdapter: MainListAdapter
+    private lateinit var listAdapter: MainListHolderAdapter
 
     // MARK: Overrides
 
@@ -30,8 +31,12 @@ class MainListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // TODO refactor
         if (this.context != null) {
-            listAdapter = MainListAdapter(this.context!!, data)
+            listAdapter = MainListHolderAdapter(
+                this.context!!,
+                data
+            )
         }
 
         listView = view.findViewById(R.id.fragment_list)
