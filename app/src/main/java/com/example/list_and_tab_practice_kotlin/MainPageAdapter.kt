@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.example.list_and_tab_practice_kotlin.list.binding.MainListBindingFragment
 import com.example.list_and_tab_practice_kotlin.list.holder.MainListHolderFragment
 import com.example.list_and_tab_practice_kotlin.list.list.MainListFragment
+import com.example.list_and_tab_practice_kotlin.recycle.MainRecycleFragment
 
 class MainPageAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
 
@@ -34,7 +35,7 @@ class MainPageAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
                 return MainListBindingFragment()
             }
             3 -> {
-                return Fragment()
+                return MainRecycleFragment()
             }
             else -> return null
         }

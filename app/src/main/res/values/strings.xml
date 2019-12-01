@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">List_And_Tab_Practice_Kotlin</string>
+    <string name="textview">TextView</string>
 </resources>
