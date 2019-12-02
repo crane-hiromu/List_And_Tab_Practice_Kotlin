@@ -1,9 +1,9 @@
 package com.example.list_and_tab_practice_kotlin.recycle
 
 import android.content.Context
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.example.list_and_tab_practice_kotlin.R
 
 
@@ -23,14 +23,11 @@ class MainRecycleAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewRecycleHolder, position: Int) {
-        holder?.let {
-            it.textViewItem?.text = models[position]
-        }
+        holder.textViewItem.text = models[position]
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewRecycleHolder {
-        val layoutInflater = LayoutInflater.from(context)
-        val item = layoutInflater.inflate(R.layout.fragment_main_list_item, parent, false)
+        val item = LayoutInflater.from(context).inflate(R.layout.fragment_main_list_item, parent, false)
         return ViewRecycleHolder(item)
     }
 }
