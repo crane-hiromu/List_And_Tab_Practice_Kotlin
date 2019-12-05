@@ -30,15 +30,11 @@ class MainListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // TODO refactor
-        if (this.context != null) {
-            listAdapter = MainListAdapter(
-                this.context!!,
-                data
-            )
-        }
-
         listView = view.findViewById(R.id.fragment_list)
-        listView.adapter = listAdapter
+
+        this.context?.let {
+            listAdapter = MainListAdapter(it, data)
+            listView.adapter = listAdapter
+        }
     }
 }

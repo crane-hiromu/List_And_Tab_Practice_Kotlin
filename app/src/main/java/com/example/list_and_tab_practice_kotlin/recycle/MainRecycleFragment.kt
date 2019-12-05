@@ -7,6 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.list_and_tab_practice_kotlin.R
+import androidx.recyclerview.widget.LinearLayoutManager
+
+
 
 class MainRecycleFragment : Fragment() {
 
@@ -15,6 +18,7 @@ class MainRecycleFragment : Fragment() {
     private val data: List<String> = arrayListOf("hoge", "huga", "fizz", "buzz")
     private lateinit var recycleView: RecyclerView
     private lateinit var recycleAdapter: MainRecycleAdapter
+    private lateinit var recycleLayout: LinearLayoutManager
 
     // MARK: Overrides
 
@@ -29,15 +33,14 @@ class MainRecycleFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // TODO refactor
-        if (this.context != null) {
-            recycleAdapter = MainRecycleAdapter(
-                this.context!!,
-                data
-            )
-        }
-
         recycleView = view.findViewById(R.id.fragment_recycle)
-        recycleView.adapter = recycleAdapter
+
+        this.context?.let {
+            recycleAdapter = MainRecycleAdapter(it, data)
+            recycleView.adapter = recycleAdapter
+
+            recycleLayout = LinearLayoutManager(it)
+            recycleView.layoutManager = recycleLayout
+        }
     }
 }
