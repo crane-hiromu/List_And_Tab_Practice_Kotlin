@@ -48,4 +48,19 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
 //    implementation "androidx.room:room-runtime:2.2.0-rc01"
 //    annotationProcessor "androidx.room:room-compiler:2.2.0-rc01"
+
+
+    //Retrofit2
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.1'
+    //OkHttp3
+    implementation 'com.squareup.okhttp3:okhttp:4.0.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.0.1'
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:4.0.1'
+    // RxJava2
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.11'
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
 }
